@@ -1,4 +1,5 @@
 #include <stdio.h>
+double result = 0;
 int options()
 {
  printf("Add(1) \n");
@@ -12,16 +13,14 @@ int get_input()
   int choice;
   do {
     options();
-    scanf("%d\n",&choice);
-    printf("\n");
-
+    scanf("%d",&choice);
   } while(choice_is_valid(choice)== 0);
   return choice;
 }
 int choice_is_valid(int choice)
 {
   int valid_number = 0;
-  if(choice == 1||choice == 2||choice == 3||choice == 4||choice == -1||)
+  if(choice == 1||choice == 2||choice == 3||choice == 4||choice == -1)
   {
     valid_number = 1;
   }
@@ -57,6 +56,8 @@ int optionsChoose(int number)
     case 4:result = divide();
     break;
     case -1: printf("Quit by the User\n");
+    break;
+    default:
     break;
   }
   return result;
