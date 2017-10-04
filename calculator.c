@@ -22,27 +22,57 @@ int choice_is_valid(int choice)
   int valid_number = 0;
   if(choice == 1||choice == 2||choice == 3||choice == 4||choice == -1)
   {
-    valid_number = 1;
+  valid_number = 1;
   }
   return valid_number;
 }
 double add()
 {
-  return 0;
+  double numbers[2];
+  printf("Put the first number in\n");
+  scanf("%f", &numbers[0]);
+  printf("%.2f ",&numbers[0] );
+  printf("Put the second number in\n");
+  scanf("%f", &numbers[1]);
+  double add_result = numbers[0] + numbers[1];
+
+  return add_result;
 }
 double subtract()
 {
-  return 0;
+  double number1;
+  double number2;
+  printf("Put the first number in\n");
+  scanf("%d", &number1);
+  printf("Put the second number in\n");
+  scanf("%d", &number2);
+  double subtract_result = number1 - number2;
+  return subtract_result;
 }
 double multiply()
 {
-  return 0;
+  double number1;
+  double number2;
+  printf("Put the first number in\n");
+  scanf("%d", &number1);
+  printf("Put the second number in\n");
+  scanf("%d", &number2);
+  double multiply_result = number1 * number2;
+  return multiply_result;
 }
 double divide()
 {
-  return 0;
+  double number1;
+  double number2;
+  printf("Put the first number in\n");
+  scanf("%d", &number1);
+  printf("%d\n",&number1 );
+  printf("Put the second number in\n");
+  scanf("%d", &number2);
+  double divide_result = number1 / number2;
+  return divide_result;
 }
-int optionsChoose(int number)
+double optionsChoose(int number)
 {
   switch (number)
   {
