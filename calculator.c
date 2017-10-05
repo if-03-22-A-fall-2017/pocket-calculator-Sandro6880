@@ -8,15 +8,7 @@ int options()
  printf("Divide(4)\n");
  printf("Stop programm(-1)\n");
 }
-int get_input()
-{
-  int choice;
-  do {
-    options();
-    scanf("%d",&choice);
-  } while(choice_is_valid(choice)== 0);
-  return choice;
-}
+
 int choice_is_valid(int choice)
 {
   int valid_number = 0;
@@ -26,57 +18,66 @@ int choice_is_valid(int choice)
   }
   return valid_number;
 }
-double add()
+int get_input()
 {
-  double numbers[2];
+  int choice;
+  do {
+    options();
+    scanf("%d",&choice);
+  } while(choice_is_valid(choice)== 0);
+  return choice;
+}
+
+int add()
+{
+  int number1;
+  int number2;
   printf("Put the first number in\n");
-  scanf("%f", &numbers[0]);
-  printf("%.2f ",&numbers[0] );
+  scanf("%d", &number1);
   printf("Put the second number in\n");
-  scanf("%f", &numbers[1]);
-  double add_result = numbers[0] + numbers[1];
+  scanf("%d", &number2);
+  int add_result = number1 + number2;
 
   return add_result;
 }
-double subtract()
+int subtract()
 {
-  double number1;
-  double number2;
+  int number1;
+  int number2;
   printf("Put the first number in\n");
   scanf("%d", &number1);
   printf("Put the second number in\n");
   scanf("%d", &number2);
-  double subtract_result = number1 - number2;
+  int subtract_result = number1 - number2;
   return subtract_result;
 }
-double multiply()
+int multiply()
 {
-  double number1;
-  double number2;
+  int number1;
+  int number2;
   printf("Put the first number in\n");
   scanf("%d", &number1);
   printf("Put the second number in\n");
   scanf("%d", &number2);
-  double multiply_result = number1 * number2;
+  int multiply_result = number1 * number2;
   return multiply_result;
 }
-double divide()
+int divide()
 {
-  double number1;
-  double number2;
+  int number1;
+  int number2;
   printf("Put the first number in\n");
   scanf("%d", &number1);
-  printf("%d\n",&number1 );
   printf("Put the second number in\n");
   scanf("%d", &number2);
-  double divide_result = number1 / number2;
+  int divide_result = number1 / number2;
   return divide_result;
 }
-double optionsChoose(int number)
+int optionsChoose(int number)
 {
   switch (number)
   {
-    double result;
+    int result;
     case 1:result = add();
     break;
     case 2:result = subtract();
@@ -97,8 +98,8 @@ int main(int argc, char const *argv[])
 {
   int numberchosen;
   numberchosen = get_input();
-  double result;
+  int result;
   result = optionsChoose(numberchosen);
-  printf("\nResult: %.2lf\n",result);
+  printf("\nResult: %d\n",result);
   return 0;
 }
